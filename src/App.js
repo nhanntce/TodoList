@@ -158,7 +158,7 @@ class App extends React.Component {
 			taskEditting= { this.state.taskEditting }
 			onSubmit = { this.onSubmit }
 			onCloseForm= { this.onCloseForm }/> : '';
-		
+
 			tasks = tasks.filter((task) => {
 				if(task.name.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
 					if(filterStatus === -1) {
@@ -169,7 +169,6 @@ class App extends React.Component {
 						return task.status !== true;
 					}
 				}
-				return task;
 			})
 			tasks = tasks.sort((task1, task2) => {
 				if(typeSort === 1) {
