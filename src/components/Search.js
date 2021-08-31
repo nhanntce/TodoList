@@ -1,16 +1,20 @@
 import React from "react";
 
 class Search extends React.Component {
+
+    onHandleChange = (event) => {
+        this.props.onSearch(event.target.value);
+    }
+
     render() {
         return (
             <div>
-                <span className="form-group">
-                    <input type="text" className="form-control search" placeholder="Search" />
-                </span>{" "}
-                &nbsp;
-                <button type="button" className="btn btn-success">
-                    <i className="fa fa-search"></i>
-                </button>
+                <div className="form-group">
+                    <input type="text" 
+                        className="form-control" 
+                        placeholder="Search"
+                        onChange= { this.onHandleChange } />
+                </div>
             </div>
         );
     }

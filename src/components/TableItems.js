@@ -8,7 +8,16 @@ class TableItem extends React.Component {
 	render() {
 
         var listItem = this.props.tasks.map((task, index) => {
-            return <Item key={ index } no={index + 1} name={task.name} status={task.status}/>;
+            return <Item 
+                    key={ index }
+                    id= { task.id }
+                    no={index + 1} 
+                    name={task.name} 
+                    status={task.status}
+                    onUpdateStatus= { this.props.onUpdateStatus }
+                    onDelete= { this.props.onDelete }
+                    onUpdate = { this.props.onUpdate }
+                    />;
         });
 
 		return (
